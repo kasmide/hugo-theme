@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div id="titleBox">
+  {{ template "breadcrumbs" . }}
+  <h1>{{ .Title }}</h1>
+  <div>
+    {{len .Pages}}件
+  </div>
+</div>
+<div class="pagelist">
+  <ul>
+    {{ range .Pages }}
+    {{ template "pagelist" . }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    {{- partial "head.html" . -}}
+    <body>
+
+        <header>
+            {{- partial "header.html" . -}}
+        </header>
+        <div id="sub">
+            {{- partial "sidebar.html" . -}}
+        </div>
+        <div id="mainBlock" onmousedown="toggleMenu(false)">   
+            <main>
+                {{- block "main" . }}{{- end }}
+            </main>
+            {{- partial "footer.html" . -}}
+        </div>
+    </body>
+</html>

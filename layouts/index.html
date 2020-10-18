@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div id="titleBox">
+  {{ template "breadcrumbs" . }}
+  <h1>{{ .Title }}</h1>
+</div>
+  {{ .Content }}
+{{ end }}

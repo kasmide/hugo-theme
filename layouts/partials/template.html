@@ -1,0 +1,32 @@
+{{ define "pagelist" }}
+  <li>
+    <a href="{{ .Permalink }}"><i class="
+      {{ if .Params.icon }}{{.Params.icon}}
+      {{ else if eq .Kind "section" }}
+      ri-folder-line
+      {{ else if eq .Kind "page" }}ri-article-line
+      {{ else if eq .Kind "home" }}ri-home-4-line
+      {{ else if eq .Kind "taxonomy" "term" }}ri-price-tag-3-line
+      {{ else }}
+      ri-file-unknow-line
+      {{end}}"></i>
+      {{ .LinkTitle }}</a>
+  </li>
+{{ end }}
+{{ define "_breadcrumbs" }}
+  {{ with .Parent}}
+    {{ template "_breadcrumbs" . }}
+  {{ end }}
+  {{ template "pagelist" .}}
+{{ end }}
+{{ define "breadcrumbs" }}
+<div id="breadcrumbs" class="pagelist">
+  <ul>
+    {{ with .Parent}}
+      {{ template "_breadcrumbs" . }}
+    {{ else }}
+    {{ template "_breadcrumbs" $ }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

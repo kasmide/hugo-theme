@@ -1,0 +1,32 @@
+{{$scratch := newScratch}}
+{{ if in .TableOfContents "<li>"}}
+  {{ if $scratch.Get "HasAbove" }}<hr>{{end}}
+  <div class="pagelist">
+    <p>目次</p>
+    {{.TableOfContents}}
+  </div>
+  {{ $scratch.Set "HasAbove" "true"}}
+{{ end }}
+{{ if .Site.Menus.main}}
+  {{ if $scratch.Get "HasAbove" }}<hr>{{end}}
+  <div class="pagelist">
+    <ul>
+      {{ range .Site.Menus.main.ByWeight }}
+        {{ template "pagelist" .Page }}
+      {{ end }}
+    </ul>
+  </div>
+{{end}}
+{{ if .Site.Menus.external }}
+  {{ if $scratch.Get "HasAbove" }}<hr>{{end}}
+  <div class="pagelist">
+    <p>外部リンク</p>
+    <ul>
+      {{ range .Site.Menus.external.ByWeight }}
+      <li>
+        <a href="{{ .URL }}">{{.Pre}}{{ .Name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+{{end}}

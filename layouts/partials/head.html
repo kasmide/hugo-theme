@@ -1,0 +1,16 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{ if .Description }}
+  <meta name="description" content="{{ .Description }}" />
+  {{ end }}
+  <title>{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  {{ template "_internal/opengraph.html" . }}
+  {{ if not (in (string .Site.BaseURL) "localhost") }}
+    {{ template "_internal/google_analytics_async.html" . }}
+  {{ end }}
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <script src="{{ .Site.BaseURL }}/js/script.js"></script>
+</head>

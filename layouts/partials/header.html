@@ -1,0 +1,17 @@
+<label id="expand">
+  <input type="button" onclick="toggleMenu()">
+  <i class="ri-menu-line"></i>
+</label>
+<a id="logo" href="{{ .Site.BaseURL }}">
+  {{ if .Site.Params.SiteLogo }}<img src="{{ .Site.Params.SiteLogo }}">{{ end}}
+  <p>{{ .Site.Title }}</p>
+</a>
+  <div id="headerMenu">
+    <ul>
+      {{ range .Site.Params.menu.header }}
+      <li>
+        <a href="{{ .url }}" title="{{ .title }}">{{ if .icon }}<i class="{{ .icon }}"></i>{{ end }}<p>{{ .title }}</p></a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
