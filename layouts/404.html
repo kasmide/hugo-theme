@@ -1,1 +1,8 @@
-404 Found.
+{{ define "main" }}
+<div id="titleBox">
+  {{ template "breadcrumbs" . }}
+  <h1>{{ .Title }}</h1>
+  <div>このページは存在しません</div>
+</div>
+  {{ .Content }}
+{{ end }}
