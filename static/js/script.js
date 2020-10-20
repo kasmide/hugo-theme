@@ -6,3 +6,9 @@ function toggleMenu(toggle) {
     sub.classList.toggle("toggled");
   }
 }
+window.onload= () => {
+  Array.from(document.getElementById("sub").getElementsByTagName("a")).forEach((a)=>{
+    a.addEventListener("click",toggleMenu,false);
+      console.log(name)
+    })
+}
