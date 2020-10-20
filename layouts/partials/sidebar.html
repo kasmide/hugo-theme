@@ -24,7 +24,7 @@
     <ul>
       {{ range .Site.Menus.external.ByWeight }}
       <li>
-        <a href="{{ .URL }}">{{.Pre}}{{ .Name }}</a>
+        <a href="{{ .URL }}" target="_blank" rel="noopener noreferrer">{{.Pre}}{{ .Name }}</a>
       </li>
       {{ end }}
     </ul>
