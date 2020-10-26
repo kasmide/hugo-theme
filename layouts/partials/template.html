@@ -17,7 +17,10 @@
   {{ with .Parent}}
     {{ template "_breadcrumbs" . }}
   {{ end }}
-  {{ template "pagelist" .}}
+  <div>
+    {{ template "pagelist" .}}
+    <i class="ri-arrow-drop-right-line"></i>
+  </div>
 {{ end }}
 {{ define "breadcrumbs" }}
 <div id="breadcrumbs" class="pagelist">

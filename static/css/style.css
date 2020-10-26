@@ -108,13 +108,16 @@ header > #headerMenu > ul > li:not(:last-of-type){
   margin: 0;
   padding: 0;
   flex-wrap: wrap;
+  align-items: center;
 }
-#breadcrumbs > ul > li{
+#breadcrumbs > ul > div{
   display: flex;
+  align-items: center;
 }
-#breadcrumbs > ul > li:after{
-  content:">";
-  margin: 0 15px;
+
+#breadcrumbs > ul > div > i{
+  margin: 0 10px;
+  color: var(--text-color-light);
 }
 
 #sub{
@@ -133,12 +136,12 @@ div.pagelist ul{
   padding: 0 15px;
   margin:0;
 }
-div.pagelist ul > li > a{
+div.pagelist ul a{
   color:var(--text-color);
   display: flex;
   align-items: center;
 }
-div.pagelist ul > li > a > i{
+div.pagelist ul a > i{
   margin-right: 10px;
 }
 #sub > div{
