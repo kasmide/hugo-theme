@@ -2,6 +2,8 @@
   --text-color: #555;
   --text-color-light: #999;
   --link-color: #1e7c74;
+  --highlight-bg: var(--link-color);
+  --highlight-text: #eaeaea;
   --border-color: #0002;
   --background-color: #fff;
 }
@@ -11,6 +13,7 @@
     --text-color: #eaeaea;
     --text-color-light: #fff8;
     --link-color: #3fd4c8;
+    --highlight-text: #000;
     --border-color: #fff2;
     --background-color: #34393d;
   }
@@ -99,8 +102,20 @@ header > #headerMenu > ul > li:not(:last-of-type){
   grid-column: 2;
   overflow: auto;
   display: grid;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto 1fr auto;
   transition: opacity 300ms cubic-bezier(.17,.84,.44,1);
+}
+#mainBlock #attention{
+  background: var(--highlight-bg);
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+}
+#mainBlock #attention i{
+  margin-right: .5em;
+}
+#mainBlock #attention *{
+  color: var(--highlight-text)
 }
 #breadcrumbs > ul{
   list-style: none;
@@ -165,6 +180,7 @@ div.pagelist ul a > i{
 main{
   padding: 30px 40px;
   max-width: calc(100vw - 80px);
+  grid-row:2;
 }
 main > h1{
   margin: 0;
@@ -186,6 +202,7 @@ footer{
   background:#0000;
   padding:20px;
   color: var(--text-color-light);
+  grid-row:3;
 }
 @media (max-width: 800px) {
   body{

@@ -9,7 +9,10 @@
         <div id="sub">
             {{- partial "sidebar.html" . -}}
         </div>
-        <div id="mainBlock" onmousedown="toggleMenu(false)">   
+        <div id="mainBlock" onmousedown="toggleMenu(false)">
+            {{ if .Site.Params.BannerContents }}
+            <div id="attention"><i class="ri-error-warning-line"></i><p>{{ .Site.Params.BannerContents | safeHTML }}</p></div>
+            {{ end }}
             <main>
                 {{- block "main" . }}{{- end }}
             </main>
